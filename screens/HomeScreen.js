@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextInput, Button } from "react-native";
+import { TextInput, Button, View, Text } from "react-native";
 import LocationPicker from "../components/LocationPicker";
 
 export default function HomeScreen() {
@@ -10,6 +10,9 @@ export default function HomeScreen() {
 
   return (
     <>
+      <View style={{ margin: 12 }}>
+        <Text>Welcome to the pickup component</Text>
+      </View>
       <TextInput
         style={{
           borderWidth: 1,
@@ -22,7 +25,11 @@ export default function HomeScreen() {
         value={inputValue}
         onChangeText={(text) => setInputValue(text)}
       />
-      <Button title="Location Picker" onPress={() => setModalVisible(true)} />
+      <Button
+        color={"#000"}
+        title="Location Picker"
+        onPress={() => setModalVisible(true)}
+      />
       <LocationPicker
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
